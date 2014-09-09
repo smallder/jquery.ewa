@@ -2,7 +2,7 @@
 
 This is a integration way for "Excel Online" from [Microsoft One Drive](https://onedrive.live.com).
 
-This plugin uses [The Excel Services ECMAScript](http://msdn.microsoft.com/en-us/library/ee589018.aspx) a.k.a. Ewa API.
+This plugin uses [The Excel ServicesECMAScript Object Model](http://msdn.microsoft.com/en-us/library/ee589018.aspx) a.k.a. Ewa API.
 
 Usage example see in [example.html](example.html).
 
