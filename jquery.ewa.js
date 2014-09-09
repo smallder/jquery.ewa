@@ -1,6 +1,6 @@
 /**
  * The Excel ServicesECMAScript Object Model (Ewa) jQuery integration Plugin
- * To see more Ewa API you should go to http://msdn.microsoft.com/en-us/library/ee589018.aspx
+ * See more Ewa API at http://msdn.microsoft.com/en-us/library/ee589018.aspx
  * 
  * Version: 1.0.0
  * Author: http://smallder.ru
