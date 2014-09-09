@@ -1,8 +1,8 @@
 # Ewa jQuery integration Plugin
 
-This is a integration way for [Microsoft One Drive](https://onedrive.live.com).
+This is a integration way for "Excel Online" from [Microsoft One Drive](https://onedrive.live.com).
 
-This plugin uses [The Excel Services ECMAScript](http://msdn.microsoft.com/en-us/library/ee589018.aspx) API.
+This plugin uses [The Excel Services ECMAScript](http://msdn.microsoft.com/en-us/library/ee589018.aspx) a.k.a. Ewa API.
 
-For example see [example.html](example.html)
+Usage example see in [example.html](example.html).
 
