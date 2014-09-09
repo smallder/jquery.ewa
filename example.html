@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ewa jQuery integration Plugin example</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script src="http://raw.githubusercontent.com/smallder/jquery.ewa/master/ewa.js"></script>
+	</head>
+	<body>
+		<style type="text/css">
+			#xlsContainer {
+				height: 500px;
+				width: 100%;
+			}
+			
+			#xlsLog {
+				border: 1px solid gray;
+				padding: 1em;
+			}
+		</style>
+		
+		<script>
+			$(function() {
+				var log = function(message) {
+					$('#xlsLog').append("> " + message + "\n");
+				};
+				
+				try {
+					log('Loading workbook');
+					$('#xlsContainer').ewa({
+						load: function() {
+							log('Workbook is loaded');
+							
+							log('Reading A1 cell value');
+							this.ewa('getCellValue', ['A1', function(value) {
+								log('A1 cell value is "' + value + '"');
+							}]);
+							
+							log('Writing A2 cell value');
+							this.ewa('setCellValue', ['A2', 'new A2 value', function(asyncResult) {
+								if (asyncResult.getCode() == 0) {
+									log('A2 cell value writed succesfully');
+								} else {
+									log('A2 cell writing error: ' + asyncResult.getDescription());
+								}
+							}]);
+							
+							var ewa = this.ewa('getEwa');
+							log('Active workbook path is "' + ewa.getActiveWorkbook().getWorkbookPath() + '"');
+							log('Active sheet name is "' + ewa.getActiveWorkbook().getActiveSheet().getName() + '"');
+						}
+					});
+				} catch (exception) {
+					log(exception);
+				}
+			});
+		</script>
+		
+		<h1>Ewa jQuery integration Plugin example</h1>
+		<p>To get workbook token you should use embedding as script.</p>
+		
+		<pre id="xlsLog"></pre>
+		<div id="xlsContainer" data-token="SD9D9CE3C3D297B4A5!282/-7089541283196717915/t=0&s=0&v=!APsbuS9w6foCUGs"></div>
+	</body>
+</html>
