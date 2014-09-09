@@ -25,6 +25,7 @@
 			token: '',
 			ewa: {
 				uiOptions: {
+					showDownloadButton: false,
 					showGridlines: true,
 					showRowColumnHeaders: true,
 					showParametersTaskPane: true
