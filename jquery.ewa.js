@@ -83,7 +83,7 @@
 						if (asyncResult.getSucceeded()) {
 							ewa = asyncResult.getEwaControl();
 						} else {
-							throw 'Async operation failed!';
+							throw 'Can\'t load workbook with error #' + asyncResult.getCode() + ' "' + (asyncResult.getDescription() || 'Unknown error') + '"';
 						}
 						
 						if (config.load) {
@@ -180,7 +180,7 @@
 				protocol + '//r.office.microsoft.com/r/rlidExcelWLJS?v=1&kip=1',
 				loadEwa
 			).fail(function(jqxhr) {
-				throw 'Can\'t load Ewa API with error #' + jqxhr.status + ' "' + jqxhr.statusText + '"';
+				throw 'Can\'t load Ewa API with error #' + jqxhr.status + ' "' + (jqxhr.statusText || 'Unknown error') + '"';
 			});
 		} else {
 			loadEwa();
